@@ -29,7 +29,7 @@ func StartSecureServer(mux *http.ServeMux, getCertificate func(clientHello *tls.
 			GetCertificate: getCertificate,
 			MinVersion:     tls.VersionTLS12,
 			CurvePreferences: []tls.CurveID{
-				// tls.X25519, // requires go 1.8
+				tls.X25519, // requires go 1.8
 				tls.CurveP521,
 				tls.CurveP384,
 				tls.CurveP256,
